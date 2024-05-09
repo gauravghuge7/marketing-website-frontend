@@ -1,9 +1,15 @@
 import './Dashboard.css';
+import Navbar from '../Navbar/Navbar.jsx';
 
 function Dashboard() {
   return (
 
     <div>
+
+        <Navbar />
+
+
+
         <div
             className="w-[35rem] h-[9rem] border border-black outline-none rounded-lg p-4 text-center m-4  items-center "
         >
