@@ -38,7 +38,7 @@ function Login() {
         ><h1>Registeration page</h1></header>
 
         <form 
-          className="border border-black rounded-lg px-1 py-2 w-[30rem] h-[45rem] bg-gray-200 flex flex-col "
+          className="border border-black rounded-lg px-1 py-2 w-[30rem] h-[48rem] bg-gray-200 flex flex-col "
 
           formMethod="post"
           formAction="/register"
@@ -59,6 +59,18 @@ function Login() {
             minLength={10}
             maxLength={10}
             required
+          />
+          <input 
+
+            type="text" 
+            id="referral"
+            name="referral"
+           
+            placeholder="referral (optional)" 
+            className="border border-black rounded-lg px-24 py-1 my-3 text-xl flex flex-col text-start  bg-white" 
+            minLength={10}
+            maxLength={15}
+           
           />
           <div>
             <input type="checkbox" id="remember" name="remember" className="text-black text-sm" required/>
