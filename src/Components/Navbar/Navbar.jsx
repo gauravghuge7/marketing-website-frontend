@@ -8,23 +8,24 @@ function Navbar() {
 
                 <div></div>
                 <ul className="flex gap-3 text-center ">
-                    <Link to="/">
-                        <li>Home</li>
+                    
+                    <Link to="/dashboard">
+                        <li>Dashboard</li>
+                    </Link>
+                    <Link to="/history">
+                        <li>History</li>
                     </Link>
 
-                    <li>About</li>
-                    <li>Contact</li>
+                    
 
                 </ul>
                 <div>
                     <button 
                     className="border-blue-400 rounded border mx-3 px-3 py-1 bg-blue-400 hover:bg-blue-600"
                     >
-                    sign in</button>
-                    <button 
-                    className="border-blue-400 rounded border px-3 py-1 bg-blue-400 hover:bg-blue-600"
-                    >
-                    log in</button>
+                    <Link to="/"> sign in </Link>
+                   </button>
+                    
                 </div>
 
         

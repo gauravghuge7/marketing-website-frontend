@@ -1,5 +1,6 @@
 import './Dashboard.css';
 import Navbar from '../Navbar/Navbar.jsx';
+import Payment from '../../Razorpay/Payment.jsx';
 
 function Dashboard() {
   return (
@@ -38,7 +39,7 @@ function Dashboard() {
             >
                 <h2 
                     className=""
-                > ID Created today </h2>
+                > ID Created </h2>
 
                 <h3 className=""></h3>
             </div>
@@ -69,6 +70,9 @@ function Dashboard() {
         </div>
 
         
+        <footer>
+            <Payment />
+        </footer>
       
     </div>
   )
