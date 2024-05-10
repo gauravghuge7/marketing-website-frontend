@@ -1,77 +1,143 @@
-import './Dashboard.css';
-import Navbar from '../Navbar/Navbar.jsx';
+import React, { useState } from "react";
 
-function Dashboard() {
+const user = {
+  name: "Tom Cook",
+  email: "tom@example.com",
+  imageUrl:
+    "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+};
+
+export default function Dashboard() {
+  // State to track the current mode
+  const [darkMode, setDarkMode] = useState(false);
+
+  // Function to toggle between dark and light mode
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
+  };
+
   return (
+    <>
+      <div
+        className={`container mx-auto h-screen  px-4 py-8 ${
+          darkMode ? "bg-gray-900 text-white" : "bg-white text-black"
+        }`}
+      >
+        <div className="flex justify-end">
+          <h1
+            className={`text-3xl font-bold mb-4 ${
+              darkMode ? "text-white" : "text-black"
+            }`}
+          ></h1>
+          <button
+            className={`px-4 py-2 rounded-md m-0 p-0 ${
+              darkMode ? "bg-white text-black" : "bg-black text-white"
+            }`}
+            onClick={toggleDarkMode}
+          >
+            {darkMode ? " Light Mode" : " Dark Mode"}
+          </button>
+        </div>
 
-    <div>
-
-        <Navbar />
-
-
-
-        <div
-            className="w-[35rem] h-[9rem] border border-black outline-none rounded-lg p-4 text-center m-4  items-center "
-        >
-            <div>
-                <h1
-                    className='text-3xl font-bold'
-                > Total Rpin Balance</h1>
+        <h1 className="flex justify-center font-bold text-4xl mt-12 ">
+          Dashboard
+        </h1>
+        <div className="min-h-full mx-auto max-w-7xl py-6 mt-16 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-2">
+            {/* Total Rpin Balance Card */}
+            <div
+              className={`bg-${
+                darkMode ? "gray-800" : "gray-100"
+              } rounded-lg shadow-lg p-6`}
+            >
+              <h2
+                className={`text-xl font-semibold mb-4 ${
+                  darkMode ? "text-white" : "text-black"
+                }`}
+              >
+                Total Rpin Balance
+              </h2>
+              <p
+                className={`text-3xl ${
+                  darkMode ? "text-white" : "text-gray-700"
+                }`}
+              >
+                $1000
+              </p>
             </div>
+
+            {/* ID Created today Card */}
+            <div
+              className={`bg-${
+                darkMode ? "gray-800" : "gray-100"
+              } rounded-lg shadow-lg p-6`}
+            >
+              <h2
+                className={`text-xl font-semibold mb-4 ${
+                  darkMode ? "text-white" : "text-black"
+                }`}
+              >
+                ID Created{" "}
+              </h2>
+              <p
+                className={`text-3xl ${
+                  darkMode ? "text-white" : "text-gray-700"
+                }`}
+              >
+                20
+              </p>
+            </div>
+
+            {/* Total Referrals Card */}
+            <div
+              className={`bg-${
+                darkMode ? "gray-800" : "gray-100"
+              } rounded-lg shadow-lg p-6`}
+            >
+              <h2
+                className={`text-xl font-semibold mb-4 ${
+                  darkMode ? "text-white" : "text-black"
+                }`}
+              >
+                Total Referrals
+              </h2>
+              <p
+                className={`text-3xl ${
+                  darkMode ? "text-white" : "text-gray-700"
+                }`}
+              >
+                50
+              </p>
+            </div>
+
+            {/* Total Income Card */}
+            <div
+              className={`bg-${
+                darkMode ? "gray-800" : "gray-100"
+              } rounded-lg shadow-lg p-6`}
+            >
+              <h2
+                className={`text-xl font-semibold mb-4 ${
+                  darkMode ? "text-white" : "text-black"
+                }`}
+              >
+                Total Income
+              </h2>
+              <p
+                className={`text-3xl ${
+                  darkMode ? "text-white" : "text-gray-700"
+                }`}
+              >
+                $5000
+              </p>
+            </div>
+          </div>
+          <div>
+            {/* Referrals Table */}
             
-            <div className='flex items-center'>
-
-                <p className='text-2xl'></p>
-                <h2> </h2>
-            </div>
+          </div>
         </div>
-
-
-
-        <div 
-            id="refferal"
-            className="flex items-center m-auto justify-around"
-        >
-
-            <div 
-                className="w-[30rem] h-[15rem]  border bg-green-200 border-green-400 rounded-lg p-4 text-center flex flex-col justify-around items-center text-2xl text-bold "
-            >
-                <h2 
-                    className=""
-                > ID Created today </h2>
-
-                <h3 className=""></h3>
-            </div>
-
-            <div 
-                className="w-[30rem] h-[15rem] m-4 border bg-green-200 border-green-400 rounded-lg p-4 text-center flex flex-col justify-around items-center text-2xl text-bold"
-            >
-                <h2 
-                    className=""
-                > Total Referrals </h2>
-
-                <h3 className=""></h3>
-            </div>
-        
-        </div>
-
-        <div 
-            className="w-[85%] h-[15rem] my-4 border bg-orange-200 border-orange-400 rounded-lg p-4 text-center flex justify-around items-center text-2xl text-bold mx-auto"
-        >
-            <h2 
-                className=""
-            > Total Income </h2>
-
-            <h3 className="">
-                
-
-            </h3>
-        </div>
-
-        
-      
-    </div>
-  )
+      </div>
+    </>
+  );
 }
-
-export default Dashboard;
