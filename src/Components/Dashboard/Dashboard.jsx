@@ -1,8 +1,6 @@
-<<<<<<< HEAD
 import './Dashboard.css';
 import Navbar from '../Navbar/Navbar.jsx';
 import Payment from '../../Razorpay/Payment.jsx';
-=======
 import React, { useState } from "react";
 
 const user = {
@@ -20,7 +18,6 @@ export default function Dashboard() {
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
   };
->>>>>>> 70995b687ac95a007ad1bbd49d095de491424423
 
   return (
     <>
@@ -143,60 +140,11 @@ export default function Dashboard() {
             
           </div>
         </div>
-<<<<<<< HEAD
 
-
-
-        <div 
-            id="refferal"
-            className="flex items-center m-auto justify-around"
-        >
-
-            <div 
-                className="w-[30rem] h-[15rem]  border bg-green-200 border-green-400 rounded-lg p-4 text-center flex flex-col justify-around items-center text-2xl text-bold "
-            >
-                <h2 
-                    className=""
-                > ID Created </h2>
-
-                <h3 className=""></h3>
-            </div>
-
-            <div 
-                className="w-[30rem] h-[15rem] m-4 border bg-green-200 border-green-400 rounded-lg p-4 text-center flex flex-col justify-around items-center text-2xl text-bold"
-            >
-                <h2 
-                    className=""
-                > Total Referrals </h2>
-
-                <h3 className=""></h3>
-            </div>
-        
-        </div>
-
-        <div 
-            className="w-[85%] h-[15rem] my-4 border bg-orange-200 border-orange-400 rounded-lg p-4 text-center flex justify-around items-center text-2xl text-bold mx-auto"
-        >
-            <h2 
-                className=""
-            > Total Income </h2>
-
-            <h3 className="">
-                
-
-            </h3>
-        </div>
-
-        
         <footer>
             <Payment />
         </footer>
-      
-    </div>
-  )
-=======
       </div>
     </>
-  );
->>>>>>> 70995b687ac95a007ad1bbd49d095de491424423
+  )
 }

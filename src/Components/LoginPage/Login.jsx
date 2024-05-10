@@ -1,134 +1,20 @@
-<<<<<<< HEAD
 import { Link } from "react-router-dom";
 import Otp from "../Otp/Otp.jsx";
 import { useState } from "react";
 
 function Login() {
   const [verificationCode, setVerificationCode] = useState("");
-
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [referral, setReferral] = useState("");
 
   function sendData() {
+    // Assuming you want to send data when the form is submitted
     fetch("http://localhost:5000/user/register", {
-=======
-import { useState } from 'react';
-
-function Login() {
-  const [phoneNumber, setPhoneNumber] = useState('');
-  const [referral, setReferral] = useState('');
-
-  function sendData() {
-    fetch("http://localhost:3000/user/register", {
->>>>>>> 70995b687ac95a007ad1bbd49d095de491424423
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-<<<<<<< HEAD
-        phoneNumber: "",
-        verificationCode: verificationCode,
-      }),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-      });
-      
-  }
-
-    return (
-      <div className="bg-blue-100 h-full w-full">
-
-
-        <main 
-          className="m-auto w-full max-w-md py-24 px-12 text-center text-2xl"
-        >
-
-          <header
-            className="text-center text-3xl font-bold py-4"
-          ><h1>Registeration page</h1></header>
-
-          <form 
-            className="border border-black rounded-lg px-1 py-2 w-[30rem] h-[52rem] bg-gray-200 flex flex-col "
-
-            formMethod="post"
-            formAction="/register"
-            formEncType="multipart/form-data"
-          >
-            
-            <img src="../../../assets/image.jpg" alt="" height="100px" width="500px" />
-        
-
-            <input 
-              type="tel" 
-              id="mobile"
-              name="mobile"
-            
-              placeholder="Enter phone number" 
-              className="border border-black rounded-lg px-24 py-1 text-xl flex flex-col text-start  bg-white" 
-              minLength={10}
-              maxLength={10}
-              required
-            />
-            <input 
-              type="text" 
-              id="referral"
-              name="referral"
-              placeholder="referral (optional)" 
-              className="border border-black rounded-lg px-24 py-1 my-3 text-xl flex flex-col text-start  bg-white" 
-              minLength={10}
-              maxLength={15} 
-            />
-
-            <input
-              id="verificationCode"
-              type="text"
-              value={verificationCode}
-              onChange={(e) => setVerificationCode(e.target.value)}
-              placeholder="Enter OTP for Verification"
-              className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500"
-            />
-
-            <div>
-              <input type="checkbox" id="remember" name="remember" className="text-black text-sm" required/>
-              <label 
-                htmlFor="remember" 
-                className="text-black text-sm"
-              >&nbsp; I accept the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></label>
-        </div>
-            
-            
-              <button 
-                type="submit" 
-                className="border border-black bg-orange-400 hover:bg-orange-600 outline-none rounded-xl my-4 py-1 px-40" 
-                
-                onClick={sendData()}
-              >  
-              Get Otp</button>
-            
-
-            
-
-            <p
-              className="text-sm text-gray-900 text-center"
-            >By creating an account you agree to our <br/>
-
-              <a className=" hover:text-green-600" href="#">Terms of Service</a> and 
-              <a className=" hover:text-green-600" href="#"> Privacy Policy</a>
-
-            </p>
-
-
-          </form>
-
-          <Link to="/dashboard" className="text-black text-xl mx-4 border rounded">
-            <p>Dashboard</p>
-          </Link>
-        </main>
-        
-      </div>
-  )
-=======
         phoneNumber,
         referral,
       }),
@@ -140,80 +26,80 @@ function Login() {
   }
 
   return (
-    <div className="bg-gradient-to-r from-blue-100 to-blue-200 min-h-screen flex justify-center items-center">
-      <main className="m-auto py-12 px-6 text-center">
-        <header className="text-3xl font-bold py-4">
-          <h1>Registration Page</h1>
+    <div className="bg-blue-100 h-full w-full">
+      <main className="m-auto w-full max-w-md py-24 px-12 text-center text-2xl">
+        <header className="text-center text-3xl font-bold py-4">
+          <h1>Registration page</h1>
         </header>
-
         <form
-          className="rounded-lg px-8 py-10 w-96 bg-white shadow-lg"
+          className="border border-black rounded-lg px-1 py-2 w-[30rem] h-[52rem] bg-gray-200 flex flex-col "
+          onSubmit={(e) => {
+            e.preventDefault();
+            sendData();
+          }}
         >
-          <img
-            src="../../../assets/image-.png"
-            alt=""
-            className="mx-auto mb-6 accent-indigo-50"
-            style={{ height: '140px', width: '200px' }}
-          />
-
+          <img src="../../../assets/image.jpg" alt="" height="100px" width="500px" />
           <input
             type="tel"
             id="mobile"
             name="mobile"
+            value={phoneNumber}
+            onChange={(e) => setPhoneNumber(e.target.value)}
             placeholder="Enter phone number"
-            className="border border-black rounded-lg px-4 py-2 text-xl mb-4 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="border border-black rounded-lg px-24 py-1 text-xl flex flex-col text-start  bg-white"
             minLength={10}
             maxLength={10}
             required
-            value={phoneNumber}
-            onChange={(e) => setPhoneNumber(e.target.value)}
           />
-
           <input
             type="text"
             id="referral"
             name="referral"
-            placeholder="Referral (optional)"
-            className="border border-black rounded-lg px-4 py-2 text-xl mb-4 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
-            minLength={10}
-            maxLength={15}
             value={referral}
             onChange={(e) => setReferral(e.target.value)}
+            placeholder="Referral (optional)"
+            className="border border-black rounded-lg px-24 py-1 my-3 text-xl flex flex-col text-start  bg-white"
+            minLength={10}
+            maxLength={15}
           />
-
-          <div className="flex items-center mb-4">
-            <input
-              type="checkbox"
-              id="remember"
-              name="remember"
-              className="text-orange-400"
-              required
-            />
-            <label htmlFor="remember" className="text-sm text-black ml-2">
-              I accept the <a href="#" className="underline">Terms of Service</a> and{" "}
-              <a href="#" className="underline">Privacy Policy</a>
+          <input
+            id="verificationCode"
+            type="text"
+            value={verificationCode}
+            onChange={(e) => setVerificationCode(e.target.value)}
+            placeholder="Enter OTP for Verification"
+            className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500"
+          />
+          <div>
+            <input type="checkbox" id="remember" name="remember" className="text-black text-sm" required />
+            <label htmlFor="remember" className="text-black text-sm">
+              &nbsp; I accept the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>
             </label>
           </div>
-
           <button
-            type="button"
-            className="border border-black bg-orange-400 hover:bg-orange-600 rounded-xl py-2 px-6 w-full transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-110"
-            onClick={sendData}
+            type="submit"
+            className="border border-black bg-orange-400 hover:bg-orange-600 outline-none rounded-xl my-4 py-1 px-40"
           >
             Get OTP
           </button>
-
-          <p className="text-sm text-gray-900 mt-4">
+          <p className="text-sm text-gray-900 text-center">
             By creating an account you agree to our <br />
-            <a href="#" className="underline hover:text-green-600">Terms of Service</a>{" "}
+            <a className="hover:text-green-600" href="#">
+              Terms of Service
+            </a>{" "}
             and
-            <a href="#" className="underline hover:text-green-600">Privacy Policy</a>
+            <a className="hover:text-green-600" href="#">
+              {" "}
+              Privacy Policy
+            </a>
           </p>
         </form>
+        <Link to="/dashboard" className="text-black text-xl mx-4 border rounded">
+          <p>Dashboard</p>
+        </Link>
       </main>
     </div>
   );
->>>>>>> 70995b687ac95a007ad1bbd49d095de491424423
 }
 
 export default Login;
