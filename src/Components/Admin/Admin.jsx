@@ -1,33 +1,5 @@
-<<<<<<< HEAD
-
-
-
-function Admin() {
-    
-    return (
-        <div>
-            <table className="table table-striped border m-4 p-4 border-black" >
-                <thead>
-                    <tr key="">
-                        <th>Seriel no</th>
-                        <th>Mobile Number</th>
-                        <th>your refferral code</th>
-                        <th>refferral persons refferral code</th>
-                    </tr>
-                </thead>
-                <tbody>
-                </tbody>
-            </table>
-
-            
-        </div>
-    )
-}
-
-export default Admin
-=======
 import { useState } from "react";
-import React from 'react';
+import Navbar from '../Navbar/Navbar.jsx';
 
 function Admin() {
   // Dummy data for testing
@@ -63,6 +35,7 @@ function Admin() {
 
   return (
     <>
+      <Navbar />
       <div className={`container mx-auto h-screen px-4 py-8 ${darkMode ? 'bg-gray-900 text-white' : 'bg-white text-black'}`}>
         <div className='flex justify-end'>
           <h1 className={`text-3xl font-bold mb-4 ${darkMode ? 'text-white' : 'text-black'}`}></h1>
@@ -124,4 +97,3 @@ function Admin() {
 }
 
 export default Admin;
->>>>>>> 70995b687ac95a007ad1bbd49d095de491424423

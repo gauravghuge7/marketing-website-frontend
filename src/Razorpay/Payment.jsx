@@ -17,14 +17,14 @@ function Payment() {
 
         console.log(window);
 
-        var options = {
-            key, // Enter the Key ID generated from the Dashboard
-            amount: order.amount, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+        let options = {
+            key, 
+            amount: order.amount, 
             currency: "INR",
             name: "gaurav ghuge",
             description: "Test Transaction of softwares",
             image: "https://example.com/your_logo",
-            order_id: order.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+            order_id: order.id,
             callback_url: "http://localhost:5000/user/paymentverification",
             prefill: {
                 name: "Gaurav ghuge",
@@ -53,7 +53,7 @@ function Payment() {
 
                 <Stack direction={"row"}>
 
-                    <Card amount={2000} checkoutHandler={checkoutHandler} />
+                    <Card amount="2000" checkoutHandler={checkoutHandler} />
                 </Stack>
             </Box>
         </div>

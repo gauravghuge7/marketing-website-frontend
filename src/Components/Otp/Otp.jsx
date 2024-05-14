@@ -1,18 +1,154 @@
+// import {useState} from 'react'
+// import {Link, Route, Routes} from 'react-router-dom'
+// import axios from 'axios'
 
-function Otp() {
-    return (
-        <div>
-            <input 
-                type="text" 
-                id="referral"
-                name="referral"
-                placeholder="referral (optional)" 
-                className="border border-black rounded-lg px-24 py-1 my-3 text-xl flex flex-col text-start  bg-white" 
-                minLength={10}
-                maxLength={15} 
-            />
-        </div>
-    )
-}
 
-export default Otp
+// // eslint-disable-next-line react/prop-types
+// const Home = ({setPhoneNumber, handleSendOtp}) => {
+
+
+//     return (
+//         <div>
+//             <h1>otp varification </h1>
+//             <form id='form1' onSubmit={handleSendOtp}>
+//                 <label>
+//                     Phone Number :<input type="tel" name="mobile"  onChange={e => setPhoneNumber(e.target.value)} />
+//                 </label>    
+
+//                 <Link to="/verify">
+//                     <button onClick={handleSendOtp}>Send OTP</button>
+//                 </Link>
+//             </form>
+        
+//         </div>
+//     )
+// }
+
+
+
+
+// const Verify = () => {
+//     const [otp, setOtp] = useState('')
+        
+//     const handleVerifyOtp = async(e, {phoneNumber}) => {
+
+//         e.preventDefault();
+
+//         const config = {
+//             "headers" : {
+//                 "Content-Type":"application/json"
+//             }
+//         }
+
+//         const body = JSON.stringify({
+//             phoneNumber,
+//             userOtp: otp
+//         })
+
+//         const response = await axios.post('http://localhost:5000/verify', body, config)
+//         console.log(response)
+
+//         console.log(response.data)
+//         console.log(response.data.message)
+
+      
+
+
+
+
+//     }
+
+//     return (
+//         <>
+//             <div>
+//                 <h1>verify otp</h1>
+
+//                 <label>
+//                     OTP :<input type="text" value={otp} name="otp" onChange={e => setOtp(e.target.value)} />
+//                 </label>
+//                 <Otp />
+//                 <button onClick={handleVerifyOtp}>Verify OTP</button>
+                
+//             </div>
+//         </>
+
+//     )
+// }
+
+
+
+// function Otp() {
+//     const [phoneNumber, setPhoneNumber] = useState('')
+
+
+//     const handleSubmit = async (e) => {
+//         e.preventDefault();
+
+//         const config = {
+//             "headers":{
+//                 "Content-Type":"application/json"
+//             }
+//         }
+//         const body = JSON.stringify({
+//           phoneNumber
+//         })
+//         try{
+//             const response = await axios.post('http://localhost:5000/sendOtp', body, config)
+//             console.log(response)
+
+//             const data = response.data;
+
+//             console.log(response.data.message)
+//             alert(data.message);
+            
+
+
+
+            
+
+//             // if(response.data.success) {
+//             //     console.log('otp sent successfully')
+//             //     toast.success('OTP sent successfully')
+//             // }   
+//             // else {
+//             //     console.log('invalid phone number to send otp')
+//             //     toast.error('Invalid phone number to send OTP')
+//             // }
+
+//         } catch(error){
+//           console.log(error)
+//         }
+//       }
+
+
+//     return (
+//         <div>
+            
+//                 <Routes>
+
+//                     <Route path="/verify" element={<Verify phoneNumber={phoneNumber}  />} />
+
+//                     <Route path="/sendotp" element={<Home setPhoneNumber={setPhoneNumber} handleSendOtp={handleSubmit} />} />
+                    
+
+//                 </Routes>
+         
+//         </div>
+//     )
+
+// }
+
+
+
+
+
+
+
+// export {
+
+//     Verify,
+//     Home,
+//     Otp
+// }
+
+
