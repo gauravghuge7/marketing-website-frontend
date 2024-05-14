@@ -1,9 +1,16 @@
+<<<<<<< HEAD
 
 import './Dashboard.css';
 import Navbar from '../Navbar/Navbar';
 
 import { useState } from "react";
 import Payment from '../../Razorpay/Payment';
+=======
+import './Dashboard.css';
+import Navbar from '../Navbar/Navbar.jsx';
+import Payment from '../../Razorpay/Payment.jsx';
+import React, { useState } from "react";
+>>>>>>> 33809ee342f8de23eeceff8925a8e021dfb351dc
 
 const user = {
   name: "Tom Cook",
@@ -20,7 +27,10 @@ export default function Dashboard() {
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
   };
+<<<<<<< HEAD
 
+=======
+>>>>>>> 33809ee342f8de23eeceff8925a8e021dfb351dc
 
   return (
     <>
@@ -144,9 +154,20 @@ export default function Dashboard() {
             
           </div>
         </div>
+<<<<<<< HEAD
+=======
+
+        <footer>
+            <Payment />
+        </footer>
+>>>>>>> 33809ee342f8de23eeceff8925a8e021dfb351dc
       </div>
 
       <Payment />
     </>
+<<<<<<< HEAD
   );
+=======
+  )
+>>>>>>> 33809ee342f8de23eeceff8925a8e021dfb351dc
 }
